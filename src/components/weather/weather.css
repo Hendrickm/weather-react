@@ -34,3 +34,22 @@
 .weather-info-container>* {
   flex: 1 1 200px;
 }
+
+.weather-forecast-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.weather-forecast-container >*{
+  margin-left: 10px;
+  background-color: #dddddd33;
+  color: #30475e;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(20% - 10px);
+  flex-direction: column;
+  text-align: center;
+}

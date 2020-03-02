@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
 import Navbar from '../navbar/navbar';
-import CurrentWeather from '../weather/currentWeather';
+import WeatherCurrent from '../weather/weatherCurrent';
+import WeatherForecast from '../weather/weatherForecast';
 
 export default () => (
   <>
     <Navbar />
     <Container>
-      <CurrentWeather />
+      <WeatherCurrent />
+
+      <WeatherForecast />
     </Container>
   </>
 );
