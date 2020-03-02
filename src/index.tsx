@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import App from './main/app';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
-ReactDom.render(<App />, document.getElementById('root'));
+// import App from './main/app';
+import Dashboard from './components/dashboard/dashboard';
+
+ReactDom.render(<Dashboard />, document.getElementById('root'));
