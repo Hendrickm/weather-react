@@ -1,16 +1,16 @@
 import React from 'react';
 import './weather.css';
 
-import { CurrentWeather } from '../../commons/types';
+import { WeatherData } from '../../commons/types';
 
 
 interface Props {
-  currentWeather: CurrentWeather;
+  weatherData: WeatherData;
 }
 
 export default (props: Props) => {
   const {
-    currentWeather: {
+    weatherData: {
       name, main, wind, weather, dt,
     },
   } = props;
@@ -41,7 +41,7 @@ export default (props: Props) => {
           { `Humidity: ${main?.humidity}% `}
         </div>
         <div className="weather-info-item">
-          { `Feels like: ${main?.feels_like}  °C` }
+          { `Feels like: ${Math.round(main?.feels_like)}  °C` }
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-export interface CurrentWeather {
+export interface WeatherData {
   coord: Coord;
   weather: Array<Weather>
   base: string;
@@ -14,12 +14,28 @@ export interface CurrentWeather {
   cod: number
 }
 
+export interface WeatherForecast {
+  list: Array<WeatherData>
+  city: City;
+}
+
+export interface City {
+  id: number;
+  name: string;
+  coord: Coord;
+  country: string;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
+}
+
 export interface Weather {
   id: number;
   main: string;
   description: string;
   icon: string;
 }
+
 
 interface Coord {
   lon: number;

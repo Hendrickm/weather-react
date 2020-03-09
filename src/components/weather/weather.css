@@ -1,7 +1,7 @@
 .current-weather-container {
   margin-top: 50px;
   background-color: #dddddd33;
-  color: #30475e;
+  color: #fff;
   border-radius: 5px;
   padding: 20px;
   width: 100%;
@@ -40,16 +40,20 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  text-align: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .weather-forecast-container >*{
   margin-left: 10px;
+  margin-bottom: 10px;
   background-color: #dddddd33;
-  color: #30475e;
+  color: #fff;
   border-radius: 5px;
   padding: 10px;
-  width: calc(20% - 10px);
+  width: 210px;
   flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
 }

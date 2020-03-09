@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Container, Spinner } from 'react-bootstrap';
 import Navbar from '../navbar/navbar';
 import WeatherCurrent from '../weather/weatherCurrent';
-import WeatherForecast from '../weather/weatherForecast';
+import WeatherComing from '../weather/weatherComing';
 
-import { CurrentWeather } from '../../commons/types';
+import { WeatherData, WeatherForecast } from '../../commons/types';
 
 import API from '../../api/api';
 
 interface State {
-  currentWeather?: CurrentWeather;
+  weatherData?: WeatherData;
+  weatherForecast?: WeatherForecast;
 }
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
 export default class Dashboard extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { currentWeather: undefined };
+    this.state = { weatherData: undefined };
   }
 
   componentDidMount() {
@@ -31,20 +32,23 @@ export default class Dashboard extends Component<Props, State> {
         appid: '2e50810d3882ce89c4e7bd8e4ecbfda3',
         units: 'metric',
       };
-      API.get<CurrentWeather>('weather', { params })
-        .then((res: { data: CurrentWeather; }) => this.setState({ currentWeather: res.data }));
+      API.get<WeatherData>('weather', { params })
+        .then((res: { data: WeatherData; }) => this.setState({ weatherData: res.data }));
+
+      API.get('forecast', { params })
+        .then((res: { data: WeatherForecast}) => this.setState({ weatherForecast: res.data }));
     });
   }
 
   render() {
-    const { currentWeather } = this.state;
-    if (currentWeather) {
+    const { weatherData, weatherForecast } = this.state;
+    if (weatherData && weatherForecast) {
       return (
         <>
           <Navbar />
           <Container>
-            <WeatherCurrent currentWeather={currentWeather} />
-            <WeatherForecast />
+            <WeatherCurrent weatherData={weatherData} />
+            <WeatherComing weatherForecast={weatherForecast} />
           </Container>
         </>
       );
