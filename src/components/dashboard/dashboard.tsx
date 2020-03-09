@@ -7,6 +7,7 @@ import WeatherComing from '../weather/weatherComing';
 import { WeatherData, WeatherForecast } from '../../commons/types';
 
 import API from '../../api/api';
+import { API_KEY } from '../../api/enviroment';
 
 interface State {
   weatherData?: WeatherData;
@@ -29,7 +30,7 @@ export default class Dashboard extends Component<Props, State> {
       const params = {
         lat: latitude,
         lon: longitude,
-        appid: '2e50810d3882ce89c4e7bd8e4ecbfda3',
+        appid: API_KEY,
         units: 'metric',
       };
       API.get<WeatherData>('weather', { params })
