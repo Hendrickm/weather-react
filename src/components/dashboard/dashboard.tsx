@@ -50,35 +50,3 @@ export default () => {
     </Spinner>
   );
 };
-// constructor(props: Props) {
-//   super(props);
-//   this.state = { weatherData: undefined };
-// }
-
-// componentDidMount() {
-//   navigator.geolocation.getCurrentPosition((positon) => {
-//     const { latitude, longitude } = positon.coords;
-//     const params = {
-//       lat: latitude,
-//       lon: longitude,
-//       appid: API_KEY,
-//       units: 'metric',
-//     };
-//     API.get<WeatherData>('weather', { params })
-//       .then((res: { data: WeatherData; }) => this.setState({ weatherData: res.data }));
-
-//     API.get('forecast', { params })
-//       .then((res: { data: WeatherForecast }) => this.setState({ weatherForecast: res.data }));
-//   });
-// }
-
-// render() {
-//   const { weatherData, weatherForecast } = this.state;
-//   if (weatherData && weatherForecast) {
-//     return (
-
-//       );
-//   }
-//
-// }
-// }
