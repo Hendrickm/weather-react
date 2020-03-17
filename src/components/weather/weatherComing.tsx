@@ -10,7 +10,7 @@ interface Props {
 export default (props: Props) => {
   const { weatherForecast } = props;
 
-  const teste = () => {
+  const renderDays = () => {
     const filteredForecast = weatherForecast?.list
       .filter((item) => new Date(item.dt * 1000).getHours() === 12);
     return filteredForecast?.map(
@@ -20,7 +20,7 @@ export default (props: Props) => {
   return (
     <div className="weather-forecast-container">
 
-      { teste() }
+      { renderDays() }
     </div>
   );
 };

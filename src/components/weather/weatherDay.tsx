@@ -2,13 +2,13 @@ import React from 'react';
 import { WeatherData } from '../../commons/types';
 
 const DAYS: Key = {
+  0: 'Sunday',
   1: 'Monday',
   2: 'Tuesday',
   3: 'Wednesday',
   4: 'Thursday',
   5: 'Friday',
   6: 'Saturday',
-  7: 'Sunday',
 };
 
 interface Key {
@@ -28,7 +28,6 @@ export default (props: Props) => {
   } = props;
 
   const weatherInfo = weather ? weather[0] : undefined;
-
 
   return (
     <div>
